@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تسجيل التسكين</title>
+  <style>
+    * {
+      font-family: "Arial", sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #ccc;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .row input,
+    .row select {
+      flex: 1;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    /* أزرار القائمة الجانبية */
+    .sidebar-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #f0f0f0;
+      color: rgb(83, 83, 83);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 32px;
+      cursor: pointer;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background: #fff;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1002;
+      transition: right 0.3s ease;
+      padding: 20px;
+      overflow-y: auto;
+      border-radius: 20px 0 0 20px;
+    }
+
+    .sidebar.active {
+      right: 0;
+    }
+
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    .sidebar-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .close-sidebar {
+      background: #fff;
+      color: black;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sidebar-content button {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- زر القائمة الجانبية -->
+  <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+  <!-- القائمة الجانبية -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">Trio-Telecom</div>
+      <button class="close-sidebar" onclick="toggleSidebar()">×</button>
+    </div>
+    <div class="sidebar-content">
+      <button onclick="openLeaveForm()" style="background-color:#007bff;color:white;padding:10px;border-radius:8px;width:100%;border:none;font-size:16px;">التقديم على طلب أجازة 📅</button>
+      <button onclick="window.location.href='https://mohamedesamdeb.github.io/refuling/';" style="background-color:#007bff;color:white;padding:10px;border-radius:8px;width:100%;border:none;font-size:16px;">تصوير تفويل الهوندا ⛽</button>
+    </div>
+  </div>
+
+  <!-- النموذج الرئيسي -->
+  <div class="container">
+    <h2>تسجيل التسكين</h2>
+
+    <select id="taskType" onchange="updateButtonName()">
+      <option value="">اختر نوع التسكين</option>
+      <option value="بداية التسكين">بداية التسكين</option>
+      <option value="نهاية التسكين">نهاية التسكين</option>
+    </select>
+
+    <select id="technicianName">
+      <option value="">اختر اسم الفني</option>
+        <option>على احمد طنطاوى منصور</option>
+        <option>باسم نشأت صالح</option>
+        <option>سعيد حسين على</option>
+        <option>شادي رأفت</option>
+        <option>محمد حسين محمد عامر</option>
+        <option>مصطفى محمود عبد النعيم عمار</option>
+        <option>محمود محمد عبدالحميد البليهى</option>
+        <option>محمد عبده توفيق ابوزيد</option>
+        <option>مجدى عبد المجيد احمد عبدالرحمن</option>
+        <option>أحمد عزت عبدالعزيز ابراهيم</option>
+        <option>احمد على عبد الحافظ مرسى</option>
+        <option>محمد احمد عبد الحميد احمد</option>
+        <option>ابراهيم حسنى عبده ابراهيم</option>
+        <option>فوزى محمد عبد الشافى مطيش</option>
+        <option>على حسن على</option>
+        <option>فريد ابراهيم عباس</option>
+        <option>حسين هلال حسين محمد</option>
+        <option>بلال رمضان قطب حسن</option>
+        <option>هانى عبدالحميد احمد عبد الفتاح</option>
+        <option>محمد احمد احمد محمد احمد</option>
+        <option>نادر نجيب حنا يعقوب</option>
+        <option>ايمن جمال جرجس ابراهيم</option>
+        <option>هيثم مصطفى مصطفى عبد اللطيف</option>
+        <option>مصطفي سامى مصطفي</option>
+        <option>رافت سيد عبد الشكور</option>
+
+    </select>
+
+    <select id="office">
+      <option value="">اختر اسم المكتب</option>
+      <option>شبرا</option>
+      <option>جسر السويس</option>
+      <option>المهندسين</option>
+    </select>
+
+    <select id="hondaNumber">
+      <option value="">اختر رقم الهوندا</option>
+        <option>M1</option>
+        <option>M2</option>
+        <option>D1</option>
+        <option>D2</option>
+        <option>D3</option>
+        <option>D4</option>
+        <option>G1</option>
+        <option>G2</option>
+        <option>G3</option>
+        <option>G4</option>
+    </select>
+
+    <input type="text" id="siteCode" placeholder="CAIxxxx" value="CAI" />
+    <div class="row">
+      <input type="date" id="date" />
+      <input type="time" id="time" />
+    </div>
+    <input type="text" id="issue" placeholder="سبب التسكين" />
+
+    <select id="transmission">
+      <option value="">هل ترنسميشن؟</option>
+      <option value="نعم">نعم</option>
+      <option value="لا">لا</option>
+    </select>
+
+    <button id="submitButton" onclick="sendData()" style="display: none;">تسجيل</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+
+    function updateButtonName() {
+      const taskType = document.getElementById("taskType").value;
+      const btn = document.getElementById("submitButton");
+      btn.style.display = taskType ? "block" : "none";
+      btn.innerText = taskType || "تسجيل";
+    }
+
+    function sendData() {
+  const data = {
+    taskType: document.getElementById("taskType").value,
+    technicianName: document.getElementById("technicianName").value,
+    office: document.getElementById("office").value,
+    hondaNumber: document.getElementById("hondaNumber").value,
+    siteCode: document.getElementById("siteCode").value,
+    date: document.getElementById("date").value,
+    time: document.getElementById("time").value,
+    issue: document.getElementById("issue").value,
+    transmission: document.getElementById("transmission").value,
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbx7YHlKZCiH3AN58DYNGHy7tB8pKJw1godFBUJ1fEcqWCzw1i1anh0tn-4YAAXrj0meLg/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  Swal.fire({
+    icon: "success",
+    title: "تم إرسال البيانات بنجاح",
+    showConfirmButton: false,
+    timer: 2000,
+  });
+
+  // تفريغ الحقول بعد الإرسال
+  document.getElementById("taskType").value = "";
+  document.getElementById("technicianName").value = "";
+  document.getElementById("office").value = "";
+  document.getElementById("hondaNumber").value = "";
+  document.getElementById("siteCode").value = "CAI";
+  document.getElementById("date").value = "";
+  document.getElementById("time").value = "";
+  document.getElementById("issue").value = "";
+  document.getElementById("transmission").value = "";
+
+  // إخفاء الزر بعد التفريغ
+  document.getElementById("submitButton").style.display = "none";
+}
+
+    function openLeaveForm() {
+      Swal.fire("نموذج الأجازة لسه مش متفعل ✋");
+    }
+  </script>
+</body>
+</html>
