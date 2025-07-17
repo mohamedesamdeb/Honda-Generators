@@ -64,7 +64,7 @@
       background-color: #218838;
     }
 
-    /* أزرار القائمة الجانبية */
+   
     .sidebar-toggle {
       position: fixed;
       top: 20px;
@@ -138,10 +138,10 @@
 </head>
 <body>
 
-  <!-- زر القائمة الجانبية -->
+ 
   <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
 
-  <!-- القائمة الجانبية -->
+  
   <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-title">Trio-Telecom</div>
@@ -153,7 +153,7 @@
     </div>
   </div>
 
-  <!-- النموذج الرئيسي -->
+  
   <div class="container">
     <h2>تسجيل التسكين</h2>
 
@@ -165,39 +165,39 @@
 
     <select id="technicianName">
       <option value="">اختر اسم الفني</option>
-        <option>على احمد طنطاوى منصور</option>
-        <option>باسم نشأت صالح</option>
-        <option>سعيد حسين على</option>
-        <option>شادي رأفت</option>
-        <option>محمد حسين محمد عامر</option>
-        <option>مصطفى محمود عبد النعيم عمار</option>
-        <option>محمود محمد عبدالحميد البليهى</option>
-        <option>محمد عبده توفيق ابوزيد</option>
-        <option>مجدى عبد المجيد احمد عبدالرحمن</option>
-        <option>أحمد عزت عبدالعزيز ابراهيم</option>
-        <option>احمد على عبد الحافظ مرسى</option>
-        <option>محمد احمد عبد الحميد احمد</option>
-        <option>ابراهيم حسنى عبده ابراهيم</option>
-        <option>فوزى محمد عبد الشافى مطيش</option>
-        <option>على حسن على</option>
-        <option>فريد ابراهيم عباس</option>
-        <option>حسين هلال حسين محمد</option>
-        <option>بلال رمضان قطب حسن</option>
-        <option>هانى عبدالحميد احمد عبد الفتاح</option>
-        <option>محمد احمد احمد محمد احمد</option>
-        <option>نادر نجيب حنا يعقوب</option>
-        <option>ايمن جمال جرجس ابراهيم</option>
-        <option>هيثم مصطفى مصطفى عبد اللطيف</option>
-        <option>مصطفي سامى مصطفي</option>
-        <option>رافت سيد عبد الشكور</option>
+        <option value="Ali Ahmed tantawy">على احمد طنطاوى منصور</option>
+        <option value="Bassem Nashat">باسم نشأت صالح</option>
+        <option value="Saeed Hussein Ali">سعيد حسين على</option>
+        <option value="Shady Raafat Rifai">شادي رأفت</option>
+        <option value="Mohamad Hussein ">محمد حسين محمد عامر</option>
+        <option value="Mostafa Abdel Naeem ">مصطفى محمود عبد النعيم عمار</option>
+        <option value="Mahmoud elbalihy">محمود محمد عبدالحميد البليهى</option>
+        <option value="Mohamed Abdo">محمد عبده توفيق ابوزيد</option>
+        <option value="Magdy abd elmged">مجدى عبد المجيد احمد عبدالرحمن</option>
+        <option value="Ahmed ezzat abdelaziz">أحمد عزت عبدالعزيز ابراهيم</option>
+        <option value="Ahmed Ali Abdelhafiz">احمد على عبد الحافظ مرسى</option>
+        <option value="Mohamed Ahmed">محمد احمد عبد الحميد احمد</option>
+        <option value="Ibrahim hussny">ابراهيم حسنى عبده ابراهيم</option>
+        <option value="Fawzy Mohamed">فوزى محمد عبد الشافى مطيش</option>
+        <option value="Ali Hassan Ali">على حسن على</option>
+        <option value="Abanoub Azar">أبانوب عازر</option>
+        <option value="Rizk Samir">رزق سمير</option>
+        <option value="Balal Ramadan">بلال رمضان قطب حسن</option>
+        <option value="Hany abdelhamed">هانى عبدالحميد احمد عبد الفتاح</option>
+        <option value="Mohamed Ahmed Ahmed">محمد احمد احمد محمد احمد</option>
+        <option value="Nader Nagib">نادر نجيب حنا يعقوب</option>
+        <option value="Ayman gamal gerges">ايمن جمال جرجس ابراهيم</option>
+        <option value="Haitham mostafa">هيثم مصطفى مصطفى عبد اللطيف</option>
+        <option value="Mostafa sami mostafa">مصطفي سامى مصطفي</option>
+        <option value="Raafa sayed">رافت سيد عبد الشكور</option>
 
     </select>
 
     <select id="office">
       <option value="">اختر اسم المكتب</option>
-      <option>شبرا</option>
-      <option>جسر السويس</option>
-      <option>المهندسين</option>
+      <option value="DownTown">شبرا</option>
+      <option value="Gesr elsuiz">جسر السويس</option>
+      <option value="Mohandsen">المهندسين</option>
     </select>
 
     <select id="hondaNumber">
@@ -212,20 +212,29 @@
         <option>G2</option>
         <option>G3</option>
         <option>G4</option>
-        <option>Baby Honda</option>
     </select>
 
     <input type="text" id="siteCode" placeholder="CAIxxxx" value="CAI" />
+    <input type="text" id="ticketNumber" placeholder="رقم تذكرة التسكين" />
+
+
     <div class="row">
       <input type="date" id="date" />
       <input type="time" id="time" />
     </div>
-    <input type="text" id="issue" placeholder="سبب التسكين" />
+   <select id="issue">
+  <option value="">اختر سبب التسكين</option>
+  <option value="power cut">الكهرباء قاطعة</option>
+  <option value="Gen ET problem">ديزل اتصالات مبطل</option>
+  <option value="Rental problem">الرنتل مبطل</option>
+  <option value="P.M out of charge">العداد فاصل شحن</option>
+</select>
+
 
     <select id="transmission">
       <option value="">هل ترنسميشن؟</option>
-      <option value="نعم">نعم</option>
-      <option value="لا">لا</option>
+      <option value="Transmission only">نعم</option>
+      <option value="No">لا</option>
     </select>
 
     <button id="submitButton" onclick="sendData()" style="display: none;">تسجيل</button>
@@ -245,19 +254,21 @@
     }
 
     function sendData() {
-  const data = {
-    taskType: document.getElementById("taskType").value,
-    technicianName: document.getElementById("technicianName").value,
-    office: document.getElementById("office").value,
-    hondaNumber: document.getElementById("hondaNumber").value,
-    siteCode: document.getElementById("siteCode").value,
-    date: document.getElementById("date").value,
-    time: document.getElementById("time").value,
-    issue: document.getElementById("issue").value,
-    transmission: document.getElementById("transmission").value,
-  };
+ const data = {
+  taskType: document.getElementById("taskType").value,
+  technicianName: document.getElementById("technicianName").value,
+  office: document.getElementById("office").value,
+  hondaNumber: document.getElementById("hondaNumber").value,
+  siteCode: document.getElementById("siteCode").value,
+  ticketNumber: document.getElementById("ticketNumber").value, // ← جديد
+  date: document.getElementById("date").value,
+  time: document.getElementById("time").value,
+  issue: document.getElementById("issue").value,
+  transmission: document.getElementById("transmission").value,
+};
 
-  fetch("https://script.google.com/macros/s/AKfycbx7YHlKZCiH3AN58DYNGHy7tB8pKJw1godFBUJ1fEcqWCzw1i1anh0tn-4YAAXrj0meLg/exec", {
+
+  fetch("https://script.google.com/macros/s/AKfycbymjmRciXq2saOwymY1qrv3lpCfmrCaeTggXuiCFAaAGK3LXZMhgDFvljh8R80FP55Wmg/exec", {
     method: "POST",
     mode: "no-cors",
     headers: { "Content-Type": "application/json" },
@@ -271,7 +282,7 @@
     timer: 2000,
   });
 
-  // تفريغ الحقول بعد الإرسال
+ 
   document.getElementById("taskType").value = "";
   document.getElementById("technicianName").value = "";
   document.getElementById("office").value = "";
@@ -282,8 +293,10 @@
   document.getElementById("issue").value = "";
   document.getElementById("transmission").value = "";
 
-  // إخفاء الزر بعد التفريغ
+  
   document.getElementById("submitButton").style.display = "none";
+  document.getElementById("ticketNumber").value = "";
+
 }
 
     function openLeaveForm() {
